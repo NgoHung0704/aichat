@@ -88,6 +88,7 @@ function Auth({ onLoginSuccess }) {
 
   return (
     <div className="auth-container">
+<<<<<<< HEAD
       <div className="auth-card">
         <div className="auth-header">
           <h1>AI Study Assistant</h1>
@@ -95,6 +96,24 @@ function Auth({ onLoginSuccess }) {
         </div>
 
         <div className="auth-form">
+=======
+      <div className="auth-background">
+        <div className="bg-shape shape-1"></div>
+        <div className="bg-shape shape-2"></div>
+        <div className="bg-shape shape-3"></div>
+      </div>
+      
+      <div className="auth-card">
+        <div className="auth-header">
+          <div className="auth-logo">
+            <span className="logo-icon">📚</span>
+          </div>
+          <h1>Study Assistant</h1>
+          <p>{isLogin ? 'Welcome back! Sign in to continue' : 'Create your account to get started'}</p>
+        </div>
+
+        <form className="auth-form" onSubmit={handleSubmit}>
+>>>>>>> 632baa1304b9f5bf2c200e5a9c5e9e0e40e04c94
           <div className="form-group">
             <label htmlFor="username">Username</label>
             <input
@@ -105,7 +124,11 @@ function Auth({ onLoginSuccess }) {
               onChange={handleChange}
               placeholder="Enter your username"
               disabled={loading}
+<<<<<<< HEAD
               onKeyPress={(e) => e.key === 'Enter' && handleSubmit(e)}
+=======
+              autoComplete="username"
+>>>>>>> 632baa1304b9f5bf2c200e5a9c5e9e0e40e04c94
             />
           </div>
 
@@ -120,7 +143,11 @@ function Auth({ onLoginSuccess }) {
                 onChange={handleChange}
                 placeholder="Enter your email"
                 disabled={loading}
+<<<<<<< HEAD
                 onKeyPress={(e) => e.key === 'Enter' && handleSubmit(e)}
+=======
+                autoComplete="email"
+>>>>>>> 632baa1304b9f5bf2c200e5a9c5e9e0e40e04c94
               />
             </div>
           )}
@@ -135,7 +162,11 @@ function Auth({ onLoginSuccess }) {
               onChange={handleChange}
               placeholder="Enter your password"
               disabled={loading}
+<<<<<<< HEAD
               onKeyPress={(e) => e.key === 'Enter' && handleSubmit(e)}
+=======
+              autoComplete={isLogin ? "current-password" : "new-password"}
+>>>>>>> 632baa1304b9f5bf2c200e5a9c5e9e0e40e04c94
             />
             {!isLogin && (
               <small className="form-hint">Minimum 6 characters</small>
@@ -152,6 +183,10 @@ function Auth({ onLoginSuccess }) {
                   onChange={handleChange}
                   disabled={loading}
                 />
+<<<<<<< HEAD
+=======
+                <span className="checkbox-custom"></span>
+>>>>>>> 632baa1304b9f5bf2c200e5a9c5e9e0e40e04c94
                 <span>Remember me</span>
               </label>
             </div>
@@ -159,11 +194,16 @@ function Auth({ onLoginSuccess }) {
 
           {error && (
             <div className="auth-error">
+<<<<<<< HEAD
+=======
+              <span className="error-icon">⚠</span>
+>>>>>>> 632baa1304b9f5bf2c200e5a9c5e9e0e40e04c94
               {error}
             </div>
           )}
 
           <button 
+<<<<<<< HEAD
             onClick={handleSubmit}
             className="auth-submit-btn"
             disabled={loading}
@@ -176,11 +216,37 @@ function Auth({ onLoginSuccess }) {
           <p>
             {isLogin ? "Don't have an account?" : 'Already have an account?'}
             <button 
+=======
+            type="submit"
+            className="auth-submit-btn"
+            disabled={loading}
+          >
+            {loading ? (
+              <>
+                <span className="btn-spinner"></span>
+                Processing...
+              </>
+            ) : (
+              isLogin ? 'Sign In' : 'Create Account'
+            )}
+          </button>
+        </form>
+
+        <div className="auth-footer">
+          <p>
+            {isLogin ? "Don't have an account?" : 'Already have an account?'}
+            <button 
+              type="button"
+>>>>>>> 632baa1304b9f5bf2c200e5a9c5e9e0e40e04c94
               onClick={toggleMode}
               className="toggle-btn"
               disabled={loading}
             >
+<<<<<<< HEAD
               {isLogin ? 'Sign Up' : 'Login'}
+=======
+              {isLogin ? 'Sign Up' : 'Sign In'}
+>>>>>>> 632baa1304b9f5bf2c200e5a9c5e9e0e40e04c94
             </button>
           </p>
         </div>

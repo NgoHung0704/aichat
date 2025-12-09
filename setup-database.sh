@@ -3,12 +3,16 @@
 
 echo "Setting up MySQL database for AI Chat..."
 
+<<<<<<< HEAD
 # Step 1: Create database and user
+=======
+>>>>>>> 632baa1304b9f5bf2c200e5a9c5e9e0e40e04c94
 sudo mysql << EOF
 CREATE DATABASE IF NOT EXISTS aichat_db;
 CREATE USER IF NOT EXISTS 'aichat_user'@'localhost' IDENTIFIED BY 'aichat_pass';
 GRANT ALL PRIVILEGES ON aichat_db.* TO 'aichat_user'@'localhost';
 FLUSH PRIVILEGES;
+<<<<<<< HEAD
 SELECT 'Database and user created!' AS '';
 EOF
 
@@ -28,3 +32,9 @@ fi
 echo ""
 echo "✅ Database setup complete with performance indexes!"
 echo "You can now run: ./mvnw spring-boot:run"
+=======
+SELECT 'Database setup complete!' AS '';
+EOF
+
+echo "Done! You can now run: mvn spring-boot:run"
+>>>>>>> 632baa1304b9f5bf2c200e5a9c5e9e0e40e04c94

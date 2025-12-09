@@ -89,7 +89,11 @@ Content-Type: application/json
     "status": 500,
     "message": "Registration failed: Database error"
   }
+<<<<<<< HEAD
   ``` 
+=======
+  ```
+>>>>>>> 632baa1304b9f5bf2c200e5a9c5e9e0e40e04c94
 
 **cURL Example:**
 ```bash
