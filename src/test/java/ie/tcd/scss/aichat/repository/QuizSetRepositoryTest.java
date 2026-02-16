@@ -52,10 +52,6 @@ class QuizSetRepositoryTest {
         set1.setCreatedAt(LocalDateTime.now().minusDays(2));
         set1.setUpdatedAt(LocalDateTime.now().minusDays(2));
         quizSetRepository.save(set1);
-<<<<<<< HEAD
-        quizSetRepository.flush(); // Ensure set1 is saved first
-=======
->>>>>>> 632baa1304b9f5bf2c200e5a9c5e9e0e40e04c94
 
         QuizSet set2 = new QuizSet();
         set2.setUser(testUser);
@@ -65,10 +61,6 @@ class QuizSetRepositoryTest {
         set2.setCreatedAt(LocalDateTime.now().minusDays(1));
         set2.setUpdatedAt(LocalDateTime.now().minusDays(1));
         quizSetRepository.save(set2);
-<<<<<<< HEAD
-        quizSetRepository.flush(); // Ensure set2 is saved second
-=======
->>>>>>> 632baa1304b9f5bf2c200e5a9c5e9e0e40e04c94
 
         QuizSet set3 = new QuizSet();
         set3.setUser(testUser);
@@ -78,10 +70,6 @@ class QuizSetRepositoryTest {
         set3.setCreatedAt(LocalDateTime.now());
         set3.setUpdatedAt(LocalDateTime.now());
         quizSetRepository.save(set3);
-<<<<<<< HEAD
-        quizSetRepository.flush(); // Ensure set3 is saved third
-=======
->>>>>>> 632baa1304b9f5bf2c200e5a9c5e9e0e40e04c94
 
         // Act
         List<QuizSet> results = quizSetRepository.findByUserIdOrderByCreatedAtDesc(testUser.getId());

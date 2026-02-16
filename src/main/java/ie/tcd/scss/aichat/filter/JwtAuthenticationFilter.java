@@ -37,33 +37,19 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private UserDetailsService userDetailsService;
 
     @Override
-<<<<<<< HEAD
-    protected void doFilterInternal(HttpServletRequest request, 
-                                    HttpServletResponse response, 
-                                    FilterChain filterChain) throws ServletException, IOException {
-        
-        // Extract Authorization header
-        final String authorizationHeader = request.getHeader("Authorization");
-=======
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
 
         // Extract Study-Auth header (custom header to avoid conflicts with Coder proxy)
         final String authorizationHeader = request.getHeader("Study-Auth");
->>>>>>> 632baa1304b9f5bf2c200e5a9c5e9e0e40e04c94
 
         String username = null;
         String jwtToken = null;
 
         // Check if header contains Bearer token
-<<<<<<< HEAD
-        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
-            jwtToken = authorizationHeader.substring(7); // Remove "Bearer " prefix
-=======
         if (authorizationHeader != null) {
             jwtToken = authorizationHeader;
->>>>>>> 632baa1304b9f5bf2c200e5a9c5e9e0e40e04c94
             
             try {
                 username = jwtUtil.extractUsername(jwtToken);
@@ -84,18 +70,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 if (jwtUtil.validateToken(jwtToken, userDetails.getUsername())) {
                     
                     // Create authentication token
-<<<<<<< HEAD
-                    UsernamePasswordAuthenticationToken authenticationToken = 
-                        new UsernamePasswordAuthenticationToken(
-                            userDetails, 
-                            null, 
-                            userDetails.getAuthorities()
-                        );
-                    
-                    authenticationToken.setDetails(
-                        new WebAuthenticationDetailsSource().buildDetails(request)
-                    );
-=======
                     UsernamePasswordAuthenticationToken authenticationToken =
                         new UsernamePasswordAuthenticationToken(
                             userDetails,
@@ -105,7 +79,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
                     // Set details to null to avoid Coder proxy interference
                     authenticationToken.setDetails(null);
->>>>>>> 632baa1304b9f5bf2c200e5a9c5e9e0e40e04c94
 
                     // Set authentication in Spring Security context
                     SecurityContextHolder.getContext().setAuthentication(authenticationToken);
